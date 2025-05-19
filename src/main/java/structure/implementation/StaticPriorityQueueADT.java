@@ -1,5 +1,8 @@
 package structure.implementation;
 
+import exception.EmptyStructureException;
+import exception.FullStructureException;
+
 public class StaticPriorityQueueADT implements structure.definition.PriorityQueueADT {
 
     private static final int MAX = 10000;
@@ -17,7 +20,7 @@ public class StaticPriorityQueueADT implements structure.definition.PriorityQueu
     @Override
     public int getElement() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede obtener el valor de una cola vacía");
+            throw new EmptyStructureException("No se puede obtener el valor de una cola vacía");
         }
         return this.values[0];
     }
@@ -25,7 +28,7 @@ public class StaticPriorityQueueADT implements structure.definition.PriorityQueu
     @Override
     public int getPriority() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede obtener la prioridad de una cola vacía");
+            throw new EmptyStructureException("No se puede obtener la prioridad de una cola vacía");
         }
         return this.priorities[0];
     }
@@ -38,7 +41,7 @@ public class StaticPriorityQueueADT implements structure.definition.PriorityQueu
     @Override
     public void add(int a, int priority) {
         if (this.count == MAX) { // TODO Esto debería estar en todas las estructuras
-            throw new RuntimeException("No se tiene capacidad para almacenar un nuevo elemento");
+            throw new FullStructureException("No se tiene capacidad para almacenar un nuevo elemento");
         }
         if (this.isEmpty()) {
             this.values[0] = a;
@@ -107,7 +110,7 @@ public class StaticPriorityQueueADT implements structure.definition.PriorityQueu
     @Override
     public void remove() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede desacolar una cola vacía");
+            throw new EmptyStructureException("No se puede desacolar una cola vacía");
         }
 
         for (int i = 0; i < this.count - 1; i++) {

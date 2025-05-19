@@ -1,5 +1,6 @@
 package structure.implementation;
 
+import exception.EmptyStructureException;
 import structure.nodes.PriorityNode;
 
 public class DynamicPriorityQueueADT implements structure.definition.PriorityQueueADT {
@@ -9,7 +10,7 @@ public class DynamicPriorityQueueADT implements structure.definition.PriorityQue
     @Override
     public int getElement() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede obtener el valor de una cola vacía"); // C
+            throw new EmptyStructureException("No se puede obtener el valor de una cola vacía"); // C
         } else {
             return this.first.getValue();
         }
@@ -18,7 +19,7 @@ public class DynamicPriorityQueueADT implements structure.definition.PriorityQue
     @Override
     public int getPriority() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede obtener la prioridad de una cola vacía");
+            throw new EmptyStructureException("No se puede obtener la prioridad de una cola vacía");
         }
         return this.first.getPriority();
     }
@@ -75,7 +76,7 @@ public class DynamicPriorityQueueADT implements structure.definition.PriorityQue
 
     private int getMinPriority() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede obtener la prioridad de una cola vacía");
+            throw new EmptyStructureException("No se puede obtener la prioridad de una cola vacía");
         }
         int candidate = Integer.MIN_VALUE;
         PriorityNode aux = this.first;
@@ -92,7 +93,7 @@ public class DynamicPriorityQueueADT implements structure.definition.PriorityQue
     @Override
     public void remove() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede desacolar una cola vacía");
+            throw new EmptyStructureException("No se puede desacolar una cola vacía");
         }
         this.first = this.first.getNext();
     }

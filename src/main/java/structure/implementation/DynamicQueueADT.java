@@ -1,5 +1,6 @@
 package structure.implementation;
 
+import exception.EmptyStructureException;
 import structure.nodes.Node;
 
 public class DynamicQueueADT implements structure.definition.QueueADT {
@@ -9,7 +10,7 @@ public class DynamicQueueADT implements structure.definition.QueueADT {
     @Override
     public int getElement() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede obtener el primero de una cola vacia");
+            throw new EmptyStructureException("No se puede obtener el primero de una cola vacia");
         }
         return this.first.getValue();
     }
@@ -37,7 +38,7 @@ public class DynamicQueueADT implements structure.definition.QueueADT {
     @Override
     public void remove() {
         if (this.isEmpty()) {
-            throw new RuntimeException("No se puede desacolar de una cola vacia");
+            throw new EmptyStructureException("No se puede desacolar de una cola vacia");
         }
         this.first = this.first.getNext();
     }
