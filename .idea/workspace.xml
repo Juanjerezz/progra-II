@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cff4bdd4-4e03-496f-b898-b221f314ef09" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/implementation/DynamicSetADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/implementation/DynamicSetADT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,7 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Exception" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -48,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.setTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -94,7 +95,10 @@
       <workItem from="1746998665789" duration="745000" />
       <workItem from="1747616679976" duration="3307000" />
       <workItem from="1747666766342" duration="5000" />
-      <workItem from="1747704155781" duration="361000" />
+      <workItem from="1747704155781" duration="644000" />
+      <workItem from="1747704994493" duration="326000" />
+      <workItem from="1747705661646" duration="300000" />
+      <workItem from="1747709543906" duration="70000" />
     </task>
     <servers />
   </component>
