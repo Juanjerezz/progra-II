@@ -1,5 +1,7 @@
 package structure.implementation;
 
+import exception.InvalidIndexException;
+
 public class DynamicLinkedListADT implements structure.definition.LinkedListADT {
     private Node head;
     private int size;
@@ -36,7 +38,7 @@ public class DynamicLinkedListADT implements structure.definition.LinkedListADT 
     @Override
     public void insert(int index, int value) {
         if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Índice fuera de rango");
+            throw new InvalidIndexException("Índice fuera de rango");
         }
 
         Node newNode = new Node(value);
@@ -57,7 +59,7 @@ public class DynamicLinkedListADT implements structure.definition.LinkedListADT 
     @Override
     public void remove(int index) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Índice fuera de rango");
+            throw new InvalidIndexException("Índice fuera de rango");
         }
 
         if (index == 0) {
@@ -75,7 +77,7 @@ public class DynamicLinkedListADT implements structure.definition.LinkedListADT 
     @Override
     public int get(int index) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Índice fuera de rango");
+            throw new InvalidIndexException("Índice fuera de rango");
         }
 
         Node current = head;

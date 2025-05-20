@@ -1,5 +1,8 @@
 package structure.implementation;
 
+import exception.FullStructureException;
+import exception.InvalidIndexException;
+
 public class StaticLinkedListADT implements structure.definition.LinkedListADT{
     private static final int MAX_SIZE = 100;
     private int[] data;
@@ -13,7 +16,7 @@ public class StaticLinkedListADT implements structure.definition.LinkedListADT{
     @Override
     public void add(int value) {
         if (size >= MAX_SIZE) {
-            throw new RuntimeException("Lista llena");
+            throw new FullStructureException("Lista llena");
         }
         data[size] = value;
         size++;
@@ -22,7 +25,7 @@ public class StaticLinkedListADT implements structure.definition.LinkedListADT{
     @Override
     public void insert(int index, int value) {
         if (index < 0 || index > size || size >= MAX_SIZE) {
-            throw new IndexOutOfBoundsException("Índice fuera de rango o lista llena");
+            throw new InvalidIndexException("Índice fuera de rango o lista llena");
         }
         // Desplazar elementos hacia la derecha
         for (int i = size; i > index; i--) {
@@ -35,7 +38,7 @@ public class StaticLinkedListADT implements structure.definition.LinkedListADT{
     @Override
     public void remove(int index) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Índice fuera de rango");
+            throw new InvalidIndexException("Índice fuera de rango");
         }
         // Desplazar elementos hacia la izquierda
         for (int i = index; i < size - 1; i++) {
@@ -47,7 +50,7 @@ public class StaticLinkedListADT implements structure.definition.LinkedListADT{
     @Override
     public int get(int index) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Índice fuera de rango");
+            throw new InvalidIndexException("Índice fuera de rango");
         }
         return data[index];
     }
