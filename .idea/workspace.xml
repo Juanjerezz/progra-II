@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff4bdd4-4e03-496f-b898-b221f314ef09" name="Changes" comment="" />
+    <list default="true" id="cff4bdd4-4e03-496f-b898-b221f314ef09" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/implementation/DynamicSetADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/implementation/DynamicSetADT.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,7 +92,9 @@
       <workItem from="1746932689824" duration="3440000" />
       <workItem from="1746986959471" duration="1426000" />
       <workItem from="1746998665789" duration="745000" />
-      <workItem from="1747616679976" duration="428000" />
+      <workItem from="1747616679976" duration="3307000" />
+      <workItem from="1747666766342" duration="5000" />
+      <workItem from="1747704155781" duration="361000" />
     </task>
     <servers />
   </component>

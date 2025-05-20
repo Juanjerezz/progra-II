@@ -1,6 +1,7 @@
 package structure.implementation;
 
 import exception.EmptyStructureException;
+import exception.InvalidIndexException;
 import structure.definition.SetADT;
 import structure.nodes.Node;
 
@@ -105,6 +106,6 @@ public class DynamicSetADT implements SetADT {
             aux = aux.getNext();
         }
 
-        throw new RuntimeException();
+        throw new InvalidIndexException("No se pudo encontrar el nodo correspondiente al índice aleatorio.");
     }
 }
