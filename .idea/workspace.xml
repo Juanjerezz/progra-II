@@ -18,6 +18,7 @@
         <option value="Kotlin Class" />
         <option value="Exception" />
         <option value="package-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -100,6 +101,8 @@
       <workItem from="1747705661646" duration="300000" />
       <workItem from="1747709543906" duration="70000" />
       <workItem from="1747781032388" duration="1307000" />
+      <workItem from="1751342822858" duration="301000" />
+      <workItem from="1751394359028" duration="685000" />
     </task>
     <servers />
   </component>
