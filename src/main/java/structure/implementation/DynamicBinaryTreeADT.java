@@ -4,7 +4,6 @@ import structure.definition.BinaryTreeADT;
 import exception.EmptyStructureException;
 import exception.FullStructureException;
 
-
 public class DynamicBinaryTreeADT implements BinaryTreeADT {
 
     private Integer root;                    // null ⇒ árbol vacío
@@ -29,13 +28,20 @@ public class DynamicBinaryTreeADT implements BinaryTreeADT {
 
     @Override
     public BinaryTreeADT getLeft() {
+        if (left == null) {
+            return new DynamicBinaryTreeADT();  // Retorna un árbol vacío si no hay hijo izquierdo
+        }
         return left;
     }
 
     @Override
     public BinaryTreeADT getRight() {
+        if (right == null) {
+            return new DynamicBinaryTreeADT();  // Retorna un árbol vacío si no hay hijo derecho
+        }
         return right;
     }
+
     @Override
     public void add(int value) {
         if (isEmpty()) {             // Inserta en la raíz
@@ -66,32 +72,32 @@ public class DynamicBinaryTreeADT implements BinaryTreeADT {
         if (value < root) {
             if (left == null) throw new EmptyStructureException("El valor no existe.");
             left.remove(value);
-            if (left.isEmpty()) left = null;         // podó rama vacía
+            if (left.isEmpty()) left = null;         // Podamos rama vacía
             return;
         }
         if (value > root) {
             if (right == null) throw new EmptyStructureException("El valor no existe.");
             right.remove(value);
-            if (right.isEmpty()) right = null;       // podó rama vacía
+            if (right.isEmpty()) right = null;       // Podamos rama vacía
             return;
         }
 
         /* ---- Caso: this.root es el valor a eliminar ---- */
-        if (left != null && right != null) {          // dos hijos
-            // Buscar sucesor in‑order = mínimo del subárbol derecho
+        if (left != null && right != null) {          // Dos hijos
+            // Buscar sucesor in-order = mínimo del subárbol derecho
             DynamicBinaryTreeADT succ = right;
             while (succ.left != null) succ = succ.left;
             int succVal = succ.root;
-            this.root = succVal;                      // reemplaza
-            right.remove(succVal);                    // quita duplicado
+            this.root = succVal;                      // Reemplaza
+            right.remove(succVal);                    // Elimina duplicado
             if (right.isEmpty()) right = null;
-        } else {                                      // uno o ningún hijo
+        } else {                                      // Uno o ningún hijo
             DynamicBinaryTreeADT child = (left != null) ? left : right;
             if (child != null) {
                 this.root  = child.root;
                 this.left  = child.left;
                 this.right = child.right;
-            } else {                                  // hoja
+            } else {                                  // Hoja
                 this.root = null;
                 this.left = null;
                 this.right = null;

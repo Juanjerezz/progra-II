@@ -39,7 +39,7 @@ public class StaticBinaryTreeADT implements BinaryTreeADT {
     public BinaryTreeADT getLeft() {
         int leftIndex = 2 * indexRoot + 1;
         if (leftIndex >= CAPACITY || array[leftIndex] == null) {
-            return null;
+            return new StaticBinaryTreeADT();  // Devuelve un árbol vacío si no hay hijo izquierdo
         }
         return new StaticBinaryTreeADT(array, leftIndex);
     }
@@ -48,7 +48,7 @@ public class StaticBinaryTreeADT implements BinaryTreeADT {
     public BinaryTreeADT getRight() {
         int rightIndex = 2 * indexRoot + 2;
         if (rightIndex >= CAPACITY || array[rightIndex] == null) {
-            return null;
+            return new StaticBinaryTreeADT();  // Devuelve un árbol vacío si no hay hijo derecho
         }
         return new StaticBinaryTreeADT(array, rightIndex);
     }
